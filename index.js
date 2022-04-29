@@ -47,6 +47,9 @@ const addManager = () => {
     <li class="list-group-item">${newHire.onumber}</li>
   </ul>
 </div>`
+
+      team();
+
     })
 }
 
@@ -72,4 +75,98 @@ const team = () => {
         break;
     }
   })
+}
+
+const addteamEngineer = () => {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "Enter Engineer name:"
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "Enter ID number:"
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Enter email address:"
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "Enter github unername:"
+    },
+  ])
+    .then(({
+      name, id, email, github
+    }) => {
+      const newHire = new Engineer(name, id, email, github)
+      html += `
+    
+    <div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">${newHire.name}</h5>
+    <p class="card-text">${newHire.getRole()}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">${newHire.id}</li>
+    <li class="list-group-item">${newHire.email}</li>
+    <li class="list-group-item">${newHire.github}</li>
+  </ul>
+</div>`
+
+      team();
+
+    })
+}
+
+const addteamIntern = () => {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "Enter intern name:"
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "Enter ID number:"
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Enter email address:"
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "Enter school attended:"
+    },
+  ])
+    .then(({
+      name, id, email, school
+    }) => {
+      const newHire = new Intern (name, id, email, school)
+      html += `
+    
+    <div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">${newHire.name}</h5>
+    <p class="card-text">${newHire.getRole()}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">${newHire.id}</li>
+    <li class="list-group-item">${newHire.email}</li>
+    <li class="list-group-item">${newHire.school}</li>
+  </ul>
+</div>`
+
+      team();
+
+    })
 }
