@@ -44,7 +44,7 @@ const addManager = () => {
   <ul class="list-group list-group-flush">
     <li class="list-group-item">${newHire.id}</li>
     <li class="list-group-item">${newHire.email}</li>
-    <li class="list-group-item">${newHire.onumber}</li>
+    <li class="list-group-item">${newHire.officeNumber}</li>
   </ul>
 </div>`
 
