@@ -32,19 +32,19 @@ const addManager = () => {
     .then(({
       name, id, email, officeNumber
     }) => {
-      const newHire = new Manager(name, id, email, officeNumber)
+      const newTeam = new Manager(name, id, email, officeNumber)
       html += `
     
     <div class="card" style="width: 18rem;">
 
   <div class="card-body">
-    <h5 class="card-title">${newHire.name}</h5>
-    <p class="card-text">${newHire.getRole()}</p>
+    <h5 class="card-title">${newTeam.name}</h5>
+    <p class="card-text">${newTeam.getRole()}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">${newHire.id}</li>
-    <li class="list-group-item">${newHire.email}</li>
-    <li class="list-group-item">${newHire.officeNumber}</li>
+    <li class="list-group-item">${newTeam.id}</li>
+    <li class="list-group-item">${newTeam.email}</li>
+    <li class="list-group-item">${newTeam.officeNumber}</li>
   </ul>
 </div>`
 
@@ -62,17 +62,23 @@ const team = () => {
       choices: ["Add engineer", "Add Intern", "Exit app"]
 
     }
-  ]).then(({ response }) => {
-    switch (response) {
+  ]).then(({name}) => {
+    switch (name) {
       case "Add engineer":
-        teamEngineer();
+        addteamEngineer();
         break;
       case "Add Intern":
-        teamIntern();
+        addteamIntern();
         break;
       case "Exit app":
-        exitApp();
-        break;
+
+        {
+          console.log('we are in switch case')
+          exitApp();
+          break;
+        }
+
+
     }
   })
 }
@@ -103,19 +109,19 @@ const addteamEngineer = () => {
     .then(({
       name, id, email, github
     }) => {
-      const newHire = new Engineer(name, id, email, github)
+      const newTeam = new Engineer(name, id, email, github)
       html += `
     
     <div class="card" style="width: 18rem;">
 
   <div class="card-body">
-    <h5 class="card-title">${newHire.name}</h5>
-    <p class="card-text">${newHire.getRole()}</p>
+    <h5 class="card-title">${newTeam.name}</h5>
+    <p class="card-text">${newTeam.getRole()}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">${newHire.id}</li>
-    <li class="list-group-item">${newHire.email}</li>
-    <li class="list-group-item">${newHire.github}</li>
+    <li class="list-group-item">${newTeam.id}</li>
+    <li class="list-group-item">${newTeam.email}</li>
+    <li class="list-group-item">${newTeam.github}</li>
   </ul>
 </div>`
 
@@ -150,19 +156,19 @@ const addteamIntern = () => {
     .then(({
       name, id, email, school
     }) => {
-      const newHire = new Intern (name, id, email, school)
+      const newTeam = new Intern(name, id, email, school)
       html += `
     
     <div class="card" style="width: 18rem;">
 
   <div class="card-body">
-    <h5 class="card-title">${newHire.name}</h5>
-    <p class="card-text">${newHire.getRole()}</p>
+    <h5 class="card-title">${newTeam.name}</h5>
+    <p class="card-text">${newTeam.getRole()}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">${newHire.id}</li>
-    <li class="list-group-item">${newHire.email}</li>
-    <li class="list-group-item">${newHire.school}</li>
+    <li class="list-group-item">${newTeam.id}</li>
+    <li class="list-group-item">${newTeam.email}</li>
+    <li class="list-group-item">${newTeam.school}</li>
   </ul>
 </div>`
 
@@ -183,10 +189,10 @@ const exitApp = () => {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Team Generator</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Team Bootcamp</h1>
 ${html}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -195,7 +201,11 @@ ${html}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>`
-fs.writeFileSync("index.html", fileContent, function(error){
-if(error) throw error;
-})
+
+
+  fs.writeFileSync(`./dist/index.html`, fileContent, function (error) {
+    if (error) throw error;
+  })
 }
+
+addManager();
