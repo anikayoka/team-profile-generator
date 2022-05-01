@@ -37,14 +37,14 @@ const addManager = () => {
     
     <div class="card" style="width: 18rem;">
 
-  <div class="card-body">
+  <div class="card-body text-center text-white">
     <h5 class="card-title">${newTeam.name}</h5>
-    <p class="card-text">${newTeam.getRole()}</p>
+    <p class="card-text"><i class="fa-solid fa-people-roof"></i><span>${newTeam.getRole()}</span></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">${newTeam.id}</li>
-    <li class="list-group-item">${newTeam.email}</li>
-    <li class="list-group-item">${newTeam.officeNumber}</li>
+    <li class="list-group-item">ID: ${newTeam.id}</li>
+    <li class="list-group-item">Email: <a href="mailto:${newTeam.email}">${newTeam.email}</a></li>
+    <li class="list-group-item">Office Number: ${newTeam.officeNumber}</li>
   </ul>
 </div>`
 
@@ -62,7 +62,7 @@ const team = () => {
       choices: ["Add engineer", "Add Intern", "Exit app"]
 
     }
-  ]).then(({name}) => {
+  ]).then(({ name }) => {
     switch (name) {
       case "Add engineer":
         addteamEngineer();
@@ -114,14 +114,14 @@ const addteamEngineer = () => {
     
     <div class="card" style="width: 18rem;">
 
-  <div class="card-body">
+  <div class="card-body text-center text-white">
     <h5 class="card-title">${newTeam.name}</h5>
-    <p class="card-text">${newTeam.getRole()}</p>
+    <p class="card-text"><i class="fas fa-glasses"></i><span>${newTeam.getRole()}</span></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">${newTeam.id}</li>
-    <li class="list-group-item">${newTeam.email}</li>
-    <li class="list-group-item">${newTeam.github}</li>
+    <li class="list-group-item">ID: ${newTeam.id}</li>
+    <li class="list-group-item">Email: <a href="mailto:${newTeam.email}">${newTeam.email}</a></li>
+    <li class="list-group-item">Github: <a target="_blank" href="https://github.com/${newTeam.github}">${newTeam.github}</a></li>
   </ul>
 </div>`
 
@@ -161,14 +161,14 @@ const addteamIntern = () => {
     
     <div class="card" style="width: 18rem;">
 
-  <div class="card-body">
+  <div class="card-body text-center text-white">
     <h5 class="card-title">${newTeam.name}</h5>
-    <p class="card-text">${newTeam.getRole()}</p>
+    <p class="card-text"><i class="fa-solid fa-graduation-cap"></i><span>${newTeam.getRole()}</span></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">${newTeam.id}</li>
-    <li class="list-group-item">${newTeam.email}</li>
-    <li class="list-group-item">${newTeam.school}</li>
+    <li class="list-group-item">ID: ${newTeam.id}</li>
+    <li class="list-group-item">Email: <a href="mailto:${newTeam.email}">${newTeam.email}</a></li>
+    <li class="list-group-item">School: ${newTeam.school}</li>
   </ul>
 </div>`
 
@@ -188,12 +188,17 @@ const exitApp = () => {
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Team Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Team Profile Generator</title>
+    <link rel="stylesheet" href="../dist/style.css" />
   </head>
   <body>
+  <header class="container-fluid text-center text-white">
     <h1>Team Bootcamp</h1>
+  </header>
+  <div class="card-deck">
 ${html}
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

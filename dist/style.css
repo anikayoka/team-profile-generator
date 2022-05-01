@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 20px auto;
+    width: 100%;
+}
+
+h1 {
+  background-color: tomato;
+  padding: 2%;
+}
+
+.card-deck {
+  margin: 0 auto;
+}
+
+.card-body {
+  background-color: lightseagreen;
+}
+
+span {
+  margin-left: 1%;
+}
