@@ -18,7 +18,7 @@
   
   ## Srcreenshot
 
-  screencapture-file-Users-anikamclean-projects-assignments-module10-team-profile-generator-dist-index-html-2022-05-01-19_48_22
+ ![screencapture-file-Users-anikamclean-projects-assignments-module10-team-profile-generator-dist-index-html-2022-05-01-19_48_22](https://user-images.githubusercontent.com/88905488/166170007-7738597a-c763-426f-b28c-a8afe6b75d8c.png)
 
 
   ## Installation
