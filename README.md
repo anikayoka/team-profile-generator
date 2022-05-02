@@ -14,12 +14,10 @@
 
   * Video walkthrough: https://drive.google.com/file/d/1v5P3dV7BTYkLc4GF36c5hPDy0cKcONwR/view?usp=sharing
   * Github: https://github.com/anikayoka/team-profile-generator
-
   
   ## Srcreenshot
 
  ![screencapture-file-Users-anikamclean-projects-assignments-module10-team-profile-generator-dist-index-html-2022-05-01-19_48_22](https://user-images.githubusercontent.com/88905488/166170007-7738597a-c763-426f-b28c-a8afe6b75d8c.png)
-
 
   ## Installation
 
@@ -34,7 +32,6 @@
       
   [MIT Guidelines](https://choosealicense.com/licenses/)
       
-  
   ## Contributing
 
   There are no guidelines for contributing at this time. undefined
